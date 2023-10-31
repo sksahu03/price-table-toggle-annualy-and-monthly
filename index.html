@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="price-toggler">
+            <span class="month active">monthly</span>
+            <span class="year">yearly</span>
+        </div>
+
+        <div class="box-container">
+
+            <div class="box">
+                <h3>SILVER PLAN</h3>
+                <div class="price month"><span>INR </span>100.<span>00</span></div>
+                <div class="price year"><span>INR </span>650.<span>00</span></div>
+                <div class="list">
+                    <p> <i class="fas fa-check"></i> 1 MEMBER </p>
+                    <p> <i class="fas fa-check"></i> 100GB storage </p>
+                    <p> <i class="fas fa-check"></i> 2 domain </p>
+                    <p> <i class="fas fa-check"></i> team support </p>
+                    <p> <i class="fas fa-check"></i> maintenance </p>
+                </div>
+                <a href="#" class="btn">choose plan</a>
+            </div>
+
+            <div class="box">
+                <h3> GOLD PLAN</h3>
+                <div class="price month"><span>INR </span>300.<span>00</span></div>
+                <div class="price year"><span>INR </span>2000.<span>00</span></div>
+                <div class="list">
+                    <p> <i class="fas fa-check"></i> 10 MEMBER </p>
+                    <p> <i class="fas fa-check"></i> 512 GB storage </p>
+                    <p> <i class="fas fa-check"></i> 20 domain </p>
+                    <p> <i class="fas fa-check"></i> team support </p>
+                    <p> <i class="fas fa-check"></i> maintenance </p>
+                </div>
+                <a href="#" class="btn">choose plan</a>
+            </div>
+
+            <div class="box">
+                <h3>PLATINUM PLAN</h3>
+                <div class="price month"><span>INR </span>900.<span>00</span></div>
+                <div class="price year"><span>INR </span>5000.<span>00</span></div>
+                <div class="list">
+                    <p> <i class="fas fa-check"></i> 100 MEMBER </p>
+                    <p> <i class="fas fa-check"></i> 1 TB storage </p>
+                    <p> <i class="fas fa-check"></i> 200 domain </p>
+                    <p> <i class="fas fa-check"></i> team support </p>
+                    <p> <i class="fas fa-check"></i> maintenance </p>
+                </div>
+                <a href="#" class="btn">choose plan</a>
+            </div>
+
+        </div>
+
+    </div>
+
+    <script>
+        let month = document.querySelector('.price-toggler .month');
+        let year = document.querySelector('.price-toggler .year');
+        let monthAmount = document.querySelectorAll('.box-container .box .month');
+        let yearAmount = document.querySelectorAll('.box-container .box .year');
+
+        year.onclick = () => {
+            year.classList.add('active');
+            month.classList.remove('active');
+
+            monthAmount.forEach(mo => {
+                mo.style.display = 'none'
+            });
+            yearAmount.forEach(yr => {
+                yr.style.display = 'block'
+            });
+        };
+
+        month.onclick = () => {
+            year.classList.remove('active');
+            month.classList.add('active');
+
+            monthAmount.forEach(mo => {
+                mo.style.display = 'block'
+            });
+            yearAmount.forEach(yr => {
+                yr.style.display = 'none'
+            });
+        };
+    </script>
+
+</body>
+
+</html>
